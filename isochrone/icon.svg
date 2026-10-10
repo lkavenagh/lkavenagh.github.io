@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <filter id="halo" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+    <filter id="mid" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <radialGradient id="headg" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%"  stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="35%" stop-color="#9fccff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#4da3ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="recvg" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%"  stop-color="#ffd877" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#ffc247" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ground -->
+  <rect width="1024" height="1024" fill="#0a0b16"/>
+
+  <!-- faint board grid -->
+  <g stroke="#1e2444" stroke-width="2">
+    <line x1="128" y1="96" x2="128" y2="928"/>
+    <line x1="256" y1="96" x2="256" y2="928"/>
+    <line x1="384" y1="96" x2="384" y2="928"/>
+    <line x1="512" y1="96" x2="512" y2="928"/>
+    <line x1="640" y1="96" x2="640" y2="928"/>
+    <line x1="768" y1="96" x2="768" y2="928"/>
+    <line x1="896" y1="96" x2="896" y2="928"/>
+    <line x1="96" y1="128" x2="928" y2="128"/>
+    <line x1="96" y1="256" x2="928" y2="256"/>
+    <line x1="96" y1="384" x2="928" y2="384"/>
+    <line x1="96" y1="512" x2="928" y2="512"/>
+    <line x1="96" y1="640" x2="928" y2="640"/>
+    <line x1="96" y1="768" x2="928" y2="768"/>
+    <line x1="96" y1="896" x2="928" y2="896"/>
+  </g>
+
+  <!-- the pulse route: up from the source, bends at a mirror, lands on the receiver -->
+  <path d="M 384 768 L 384 384 L 768 384" fill="none" stroke-linecap="round" stroke-linejoin="round"
+        stroke="#4da3ff" stroke-width="96" opacity="0.16" filter="url(#halo)"/>
+  <path d="M 384 768 L 384 384 L 768 384" fill="none" stroke-linecap="round" stroke-linejoin="round"
+        stroke="#4da3ff" stroke-width="38" opacity="0.34" filter="url(#mid)"/>
+  <path d="M 384 768 L 384 384 L 768 384" fill="none" stroke-linecap="round" stroke-linejoin="round"
+        stroke="#5aa9ff" stroke-width="14"/>
+  <path d="M 384 768 L 384 384 L 768 384" fill="none" stroke-linecap="round" stroke-linejoin="round"
+        stroke="#d4e8ff" stroke-width="4" opacity="0.85"/>
+
+  <!-- mirror "/" at the bend -->
+  <line x1="330" y1="438" x2="438" y2="330" stroke="#aeb4d6" stroke-width="20" stroke-linecap="round"
+        opacity="0.5" filter="url(#soft)"/>
+  <line x1="330" y1="438" x2="438" y2="330" stroke="#eef1ff" stroke-width="11" stroke-linecap="round"/>
+
+  <!-- source emitter -->
+  <rect x="338" y="722" width="92" height="92" rx="20" fill="#4da3ff" opacity="0.28" filter="url(#mid)"/>
+  <rect x="348" y="732" width="72" height="72" rx="16" fill="#4da3ff"/>
+  <rect x="366" y="750" width="36" height="36" rx="9" fill="#d4e8ff"/>
+
+  <!-- pulse head, mid-flight toward the receiver -->
+  <circle cx="600" cy="384" r="54" fill="url(#headg)"/>
+  <circle cx="600" cy="384" r="15" fill="#ffffff"/>
+
+  <!-- receiver, wearing its beat in gold -->
+  <circle cx="768" cy="384" r="92" fill="url(#recvg)"/>
+  <circle cx="768" cy="384" r="52" fill="none" stroke="#ffc247" stroke-width="14"/>
+  <circle cx="768" cy="384" r="20" fill="#ffc247"/>
+</svg>
