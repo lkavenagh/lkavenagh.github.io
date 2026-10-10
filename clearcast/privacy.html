@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clearcast Privacy Policy</title>
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <h1>Privacy policy</h1>
+  <p class="dim">Clearcast for iOS and Android · Last updated 9 October 2026</p>
+
+  <p>Clearcast is made by Luke Kavenagh ("I", "me"). This policy explains what information
+  the app handles and where it goes. In short: there are no accounts, no ads and no
+  analytics, and I never build a profile of you. The app does send a location to a handful
+  of weather and air-quality services so it can tell you the conditions there — that, and
+  the app store that handles an optional tip, is the whole of it.</p>
+
+  <h2>Location</h2>
+  <p>To show the weather and air quality where you are, Clearcast asks for your device's
+  location. It only ever requests "while using the app" access, never background location.
+  You can also skip the permission entirely and just search for places by name — the app
+  works fine that way.</p>
+  <p>Whether the location comes from your device or from a search, Clearcast uses it only to
+  fetch the conditions for that spot. The coordinates are sent to the services listed below
+  as part of a plain weather request. They carry no account, no device identifier and
+  nothing that ties them to you, and they are not used to track you or build any history of
+  where you've been.</p>
+
+  <h2>The services a weather request reaches</h2>
+  <p>To turn a location into a forecast and an air-quality reading, the app contacts:</p>
+  <ul>
+    <li><strong>Open-Meteo</strong> — the weather forecast and a modelled air-quality
+    estimate, requested directly from your device by coordinate.
+    (<a href="https://open-meteo.com/en/terms">terms</a>)</li>
+    <li><strong>My air-quality proxy</strong> — a small server I run on Cloudflare
+    (<code>clearcast-aqi-proxy.lkavenagh.workers.dev</code>). The app sends it the
+    coordinates, and it fetches readings from nearby ground monitors on
+    <strong>AirNow</strong>, <strong>OpenAQ</strong>, <strong>WAQI</strong> and
+    <strong>PurpleAir</strong> on the app's behalf (these networks need API keys that can't
+    ship inside the app). It forwards the request, returns the result, and is not used to
+    log your locations or identify you. Cloudflare may keep brief, standard operational
+    request logs as the network it runs on.
+    (<a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>)</li>
+    <li><strong>Place lookup</strong> — searching for a place uses Open-Meteo's geocoding
+    service; turning your current coordinates into a place name uses
+    <strong>BigDataCloud</strong>
+    (<a href="https://www.bigdatacloud.com/privacy-and-cookie-policy">privacy</a>) and your
+    device's own built-in geocoder.</li>
+  </ul>
+  <p>Each of these receives only the location and the unit/language preference needed to
+  answer, and handles it under its own privacy policy.</p>
+
+  <h2>Information stored on your device</h2>
+  <p>Your saved places, recent searches, chosen units and language, and a cached copy of the
+  most recent readings are kept in local storage on your phone. None of it is uploaded to
+  me or synced to any account. Uninstalling Clearcast, or clearing its data in your device
+  settings, removes it.</p>
+
+  <h2>Widgets</h2>
+  <p>If you add a Clearcast widget to your home screen, it refreshes in the background by
+  making the same kind of weather request described above for your current or chosen
+  location. It stores its latest reading on your device so it can draw itself, exactly like
+  the app.</p>
+
+  <h2>The tip</h2>
+  <p>Clearcast is free and nothing in it is locked. The one optional purchase is a tip — "buy
+  Luke a coffee" — sold through the App Store on iOS and Google Play on Android. Apple or
+  Google processes the payment, and I never receive your card or payment details.</p>
+  <p>Like every developer, I receive the standard order records the stores provide through
+  App Store Connect and the Play Console (such as order number, date, product, price and
+  country), which I use for accounting and refunds. I also get an automatic alert when a tip
+  is bought; it contains only the product name, nothing about who bought it.</p>
+
+  <h2>Crash reports</h2>
+  <p>If you've allowed your device to share usage and diagnostics data with Apple or Google,
+  the App Store and Google Play may give me aggregated crash and performance statistics
+  (Android vitals and Apple's crash reports). These help me find and fix bugs, and do not
+  identify you.</p>
+
+  <h2>What Clearcast does not do</h2>
+  <ul>
+    <li>No accounts and no sign-in.</li>
+    <li>No ads, and no advertising or analytics SDKs.</li>
+    <li>No tracking across other apps or websites, and no location history.</li>
+    <li>No access to your contacts, photos, camera or microphone.</li>
+    <li>I do not sell or share your information with anyone.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>Clearcast does not knowingly collect personal information from anyone, including
+  children. It has no accounts, and the only data it handles is a location sent to the
+  weather services above and whatever the app stores handle for an optional tip under their
+  own policies.</p>
+
+  <h2>Changes</h2>
+  <p>If the app starts handling information differently, I will update this page and the date
+  at the top.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy or your data: <a href="mailto:lkavenagh+clearcast@gmail.com">lkavenagh+clearcast@gmail.com</a></p>
+
+  <footer>
+    <a href="./">Clearcast</a> · © 2026 Luke Kavenagh
+  </footer>
+</main>
+</body>
+</html>
